@@ -3,10 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
+  "homepage": "https://phat-px95.github.io/pixofme",
+  "repository": {
+    "type": "git",
+    "url": "https://phat-px95.github.io/pixofme.git"
+  },
+  
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "predeploy": "npm run build -- --prod --base=/pixofme/",
+    "deploy": "gh-pages -b deploy -d dist/pixofme"
   },
   "nx": {
     "includedScripts": []
@@ -18,7 +26,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
-    "@nx/cypress": "22.3.3",
+    "@nx/cypress": "^22.0.4",
     "@nx/eslint": "22.3.3",
     "@nx/eslint-plugin": "22.3.3",
     "@nx/js": "22.3.3",
@@ -48,6 +56,7 @@
     "eslint-plugin-jsx-a11y": "6.10.1",
     "eslint-plugin-react": "7.35.0",
     "eslint-plugin-react-hooks": "5.0.0",
+    "gh-pages": "^6.3.0",
     "jiti": "2.4.2",
     "jsdom": "~22.1.0",
     "nx": "22.3.3",
