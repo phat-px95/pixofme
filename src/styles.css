@@ -2,3 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 /* You can add global styles to this file, and also import other style files */
+:root {
+	background-color: #fef7f9;
+	background-image: radial-gradient(#FFB6C1 1px, transparent 1px);
+	background-size: 20px 20px;
+	font-family: "Rubik", sans-serif;
+
+	--lego-red: #C91A09;
+	--lego-blue: #0055BF;
+	--lego-yellow: #F2CD37;
+	--lego-green: #287F46;
+	--lego-pink: #FFB6C1;
+	--lego-white: #FFFFFF;
+	--lego-black: #1A1A1A;
+	--lego-gray: #6C6E70;
+}
+
+h1, h2, h3 {
+	font-family: "Silkscreen", sans-serif;
+}
+
+
+
+img, canvas {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
