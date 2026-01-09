@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, createHashRouter } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import NotFoundPage from '@pages/NotFoundPage';
 import App from './app';
@@ -6,7 +6,7 @@ import StoriesPage from '@pages/StoriesPage';
 import GamesPage from '@pages/GamesPage';
 import HobbiesPage from '@pages/HobbiesPage';
 
-const routes = createBrowserRouter([
+const routes = createHashRouter([
   {
     path: "/",
     element: <App />,
