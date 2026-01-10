@@ -15,7 +15,7 @@ const Footer = () => {
             Built brick by brick with React, Jotai & Tailwind CSS 🧱
           </p>
           <p className='text-gray-500 text-xs mt-1'>
-            © 2026 Luca Pham. All rights reserved.
+            © 2026 Phat Pham. All rights reserved.
           </p>
         </div>
 

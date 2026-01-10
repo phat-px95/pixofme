@@ -26,23 +26,23 @@ const HomePage = () => {
   ];
 
   return (
-    <div className='max-w-7xl mx-auto px-4 md:px-8 py-8'>
-      <div className='flex flex-col lg:flex-row gap-8'>
+    <div className='max-w-7xl mx-auto px-4 md:px-8 py-4'>
+      <div className='flex flex-col lg:flex-row'>
         {/* Right Side - Fixed Name Card */}
         <aside className='lg:w-80 flex-shrink-0'>
           <div className='lg:sticky lg:top-24'>
-            <LegoBrick color='pink'>
+            <LegoBrick color='white'>
               <div className='px-8 py-12 text-center'>
                 <div className='w-24 h-24 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center text-5xl'>
                   👨‍💻
                 </div>
-                <h1 className='text-3xl font-bold text-white mb-2'>
+                <h1 className='text-3xl font-bold text-black mb-2'>
                   Phat Pham
                 </h1>
-                <p className='text-white/90 text-lg mb-1'>
+                <p className='text-black/90 text-lg mb-1'>
                   Full Stack Developer
                 </p>
-                <p className='text-white/80 text-sm mt-4'>
+                <p className='text-black/80 text-sm mt-4'>
                   Building amazing things,
                   <br />
                   brick by brick 🧱
@@ -85,7 +85,7 @@ const HomePage = () => {
                   key={tab.id}
                   color={tab.color}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`z-20 md:mr-2 w-full md:w-auto transition-all duration-200           ${
+                  className={`z-20 w-full md:w-auto transition-all duration-200           ${
                     activeTab == tab.id
                       ? 'order-last md:order-none -mb-3 md:mb-0 z-30 '
                       : 'z-10 opacity-100 hover:opacity-100 md:-translate-y-5'
