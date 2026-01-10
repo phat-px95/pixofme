@@ -6,7 +6,7 @@ import StoriesPage from '@pages/StoriesPage';
 import GamesPage from '@pages/GamesPage';
 import HobbiesPage from '@pages/HobbiesPage';
 
-const routes = createHashRouter([
+const routes = createBrowserRouter([
   {
     path: "/",
     element: <App />,
@@ -30,6 +30,8 @@ const routes = createHashRouter([
 		},
 	]
   },
-]);
+], {
+	basename: '/pixofme',
+});
 
 export default routes;
