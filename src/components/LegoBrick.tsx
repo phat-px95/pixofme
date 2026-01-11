@@ -8,13 +8,17 @@ interface LegoBrickProps {
   onClick: any;
   fullWidth: boolean;
   activeAnimation: boolean;
+  studSizeProp: number;
+  brickBodyClassName?: string;
 }
 
 const LegoBrick = ({
   color = 'red',
   studs = 4,
+  studSizeProp = 0,
   children,
   className = '',
+  brickBodyClassName = '',
   onClick,
   fullWidth = false,
   activeAnimation = true,
@@ -42,6 +46,8 @@ const LegoBrick = ({
       } else if (width > 400) {
         studSize = 32;
         studGap = 24;
+      } else if (studSizeProp) {
+        studSize = studSizeProp;
       }
 
       const calculatedCount = Math.floor(availableWidth / (studSize + studGap));
@@ -108,6 +114,7 @@ const LegoBrick = ({
         rounded-lg p-3
         shadow-[0_6px_0_0] 
         hover:shadow-[0_10px_0_0]transition-all duration-200
+        ${brickBodyClassName}
       `}
       >
         {children}
