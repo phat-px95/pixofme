@@ -30,3 +30,6 @@ img, canvas {
   image-rendering: crisp-edges;
 }
 
+header {
+  z-index: 2147483647;
+}
