@@ -43,7 +43,8 @@
       "@types/*": ["src/types/*"],
       "@services/*": ["src/services/*"],
       "@styles/*": ["src/styles/*"],
-      "@constants/*": ["src/constants/*"]
+      "@constants/*": ["src/constants/*"],
+      "@assets/*": ["src/assets/*"],
 
     }
 }
