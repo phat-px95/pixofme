@@ -1,5 +1,5 @@
 import { createBrowserRouter, createHashRouter } from 'react-router-dom';
-import HomePage from '../pages/HomePage';
+import HomePage from '@pages/SecondaryHomePage';
 import NotFoundPage from '@pages/NotFoundPage';
 import App from './app';
 import StoriesPage from '@pages/StoriesPage';
