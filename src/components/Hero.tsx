@@ -58,7 +58,7 @@ const Hero = () => {
 
         {/* Keyboard - Simplified */}
         <div
-          className='mt-3 bg-gradient-to-br from-gray-700 to-gray-800 rounded-t-xl rounded-b-3xl p-6 shadow-xl max-w-4xl mx-auto relative'
+          className='bg-gradient-to-br from-gray-700 to-gray-800 rounded-t-xl rounded-b-3xl p-6 shadow-xl mx-auto relative'
           style={{ perspective: '1000px' }}
         >
           <div

@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { CustomSectionProps } from '@components/CustomerSection';
 import CustomSection from '@components/CustomSection';
 import Hero from '@components/Hero';
+import Section from '@components/Section';
+import { TECH_STACK_LANG } from '@constants/enConstants';
+import { WorkExperience } from '@types/WorkExperience.model';
 
 import {
-  VEEM_LOGO_IMAGE,
-  BUCKZY_LOGO_IMAGE,
-  COC_COC_LOGO_IMAGE,
-  SVMC_LOGO_IMAGE,
-} from '@constants/imageConstants'
+  TECH_STACK_DATA,
+  EXPERIENCE_DATA,
+} from '@constants/dataConstants';
 
 const projectsSectionData: CustomSectionProps = {
   sectionTitle: 'My Recent Projects',
@@ -49,73 +50,12 @@ const projectsSectionData: CustomSectionProps = {
 };
 
 const SecondaryHomePage = () => {
-  const experiences = [
-    {
-      year: 2024,
-      period: '2024 - Current',
-      companyName: 'Veem Inc.',
-      companyTitle: 'Veem Inc. - Payment processing platform',
-      companyLogo: VEEM_LOGO_IMAGE,
-      role: 'Software Developer',
-      current: true,
-      type: 'payment',
-      description: 'Shaping an exciting future for Fintech.',
-      achievements: [
-        'Improved customer trust and transaction efficiency by strengthening core features on a system processing millions of transactions daily.',
-        'Reduced cross-team bottlenecks by building intuitive internal tools that streamlined workflows and cut manual effort.',
-        'Strengthened team capability by mentoring developers and leading Agile practices, raising overall delivery speed and cohesion.',
-      ],
-    },
-    {
-      year: 2022,
-      period: '2022 - 2024',
-      companyName: 'Buckzy Payment Inc',
-      companyTitle: 'Buckzy Payment Inc. - Payment processing platform',
-      companyLogo: BUCKZY_LOGO_IMAGE,
-      companyIcon: '',
-      role: 'Software Developer',
-      current: false,
-      description: 'Building a money transfer machine.',
-      achievements: [
-        'Leading integration of new customer-facing platforms that enhanced UX and directly improved transaction success rates and customer satisfaction metrics.',
-        'Elevated code quality and reliability by introducing Test-Driven Development (TDD) in Angular and Spring Boot, enabling frequent, stable releases for a global payments platform.',
-      ],
-    },
-    {
-      year: 2019,
-      period: '2029 - 2022',
-      companyName: 'Coc Coc Company Limited',
-      companyTitle: 'Coc Coc Company Limited - Web Browser and Search Engine',
-      companyLogo: COC_COC_LOGO_IMAGE,
-      role: 'Tech Lead',
-      current: false,
-      description: 'Searching a better furture for humanity >>>',
-      achievements: [
-        'Directed the development of critical browser extensions, including Savior (used by millions daily for video/audio downloads) and Coc Coc Adblock (protecting 2M+ daily users\' privacy and enhancing Browse speed).',
-        'Collaborated with cross-functional teams to improve Search Engine Results Pages (SERP), significantly enhancing the user experience for over 2 million daily active users.',
-        'Responsible for training junior developers, cultivating strong team and cross-team dynamics, and ensuring the delivery of high-performance code to advance company products.',
-      ],
-    },
-    {
-      year: 2018,
-      period: '2018 - 2019',
-      companyName: 'Samsung Vietnam Mobile R&D Center',
-      companyTitle:
-        'Samsung Vietnam Mobile R&D Center - Mobile software research and development',
-      companyLogo: SVMC_LOGO_IMAGE,
-      role: 'Software Developer',
-      current: false,
-      description: 'Joinning a Uptopia...',
-      achievements: [
-        'Designed strategies and developed internal web projects, building user-centric web pages based on detailed software requirements specifications to meet diverse user needs.',
-      ],
-    },
-  ];
+
 
   const [selectedYear, setSelectedYear] = useState(2024);
   const [isFlipping, setIsFlipping] = useState(false);
-  const selectedExperience = experiences.find(
-    (exp) => exp.year === selectedYear,
+  const selectedExperience = EXPERIENCE_DATA.find(
+    (exp: WorkExperience) => exp.year === selectedYear,
   );
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -159,7 +99,7 @@ const SecondaryHomePage = () => {
                 </div>
 
                 <div className='flex items-center gap-8 lg:gap-8 flex-shrink-0 ml-6'>
-                  {experiences.map((exp) => (
+                  {EXPERIENCE_DATA.map((exp: WorkExperience) => (
                     <div
                       key={exp.year}
                       className='relative flex flex-col items-center min-w-40'
@@ -215,7 +155,7 @@ const SecondaryHomePage = () => {
               <div className='absolute left-6 top-0 bottom-0 w-0.5 bg-lime-300'></div>
 
               <div className='space-y-6 mb-2'>
-                {experiences.map((exp) => (
+                {EXPERIENCE_DATA.map((exp: WorkExperience) => (
                   <button
                     key={exp.year}
                     onClick={() => handleYearChange(exp.year)}
@@ -295,7 +235,7 @@ const SecondaryHomePage = () => {
                     </h4>
                     <ul className='space-y-2'>
                       {selectedExperience.achievements.map(
-                        (achievement, index) => (
+                        (achievement: string[], index: number) => (
                           <li key={index} className='flex items-start gap-2'>
                             <span className='text-lime-500 mt-1'>✓</span>
                             <span className='text-lime-700'>{achievement}</span>
@@ -356,60 +296,10 @@ const SecondaryHomePage = () => {
         data={projectsSectionData.data}
       />
 
-      <section
-        id='techstack'
-        className={`mb-16 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-      >
-        <div className='relative py-8 mb-8'>
-          {/* Horizontal Line with Title */}
-          <div className='absolute left-0 right-0 top-1/2 h-0.5 bg-lime-300 transform -translate-y-1/2'></div>
-
-          <div className='flex items-center'>
-            <div className='relative z-10 bg-gradient-to-br from-lime-50 to-yellow-50 px-4 flex-shrink-0'>
-              <h2 className='text-xl font-bold text-lime-900 whitespace-nowrap'>
-                Tech Stack
-              </h2>
-            </div>
-          </div>
-        </div>
-
-        {/* Technologies Grid */}
-        <div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 px-4'>
-          {[
-            { name: 'HTML', icon: '🌐' },
-            { name: 'CSS', icon: '🎨' },
-            { name: 'JavaScript', icon: '⚡' },
-            { name: 'Angular', icon: 'Ⓐ' },
-            { name: 'React', icon: '⚛️' },
-            { name: 'TypeScript', icon: '📘' },
-            { name: 'Tailwind', icon: '🎨' },
-            { name: 'Node.js', icon: '🟢' },
-            //   { name: 'Python', icon: '🐍' },
-            { name: 'AWS', icon: '☁️' },
-            { name: 'Docker', icon: '🐳' },
-            { name: 'Git', icon: '📦' },
-            { name: 'PostgreSQL', icon: '🐘' },
-            { name: 'MongoDB', icon: '🍃' },
-            //   { name: 'Redis', icon: '🔴' },
-            //   { name: 'GraphQL', icon: '◆' },
-            { name: 'REST API', icon: '🔗' },
-            { name: 'Jest', icon: '🃏' },
-            { name: 'Webpack', icon: '📦' },
-          ].map((tech, index) => (
-            <div
-              key={index}
-              className='bg-white rounded-lg p-3 shadow-sm hover:shadow-md border-2 border-lime-200 transition-all duration-300 hover:scale-105 hover:border-lime-300'
-            >
-              <div className='text-center'>
-                <div className='text-2xl mb-1'>{tech.icon}</div>
-                <h3 className='text-xs font-semibold text-lime-900'>
-                  {tech.name}
-                </h3>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Section
+        title={TECH_STACK_LANG}
+        data={TECH_STACK_DATA}
+      />
     </main>
   );
 };

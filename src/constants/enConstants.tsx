@@ -1,0 +1,1 @@
+export const TECH_STACK_LANG = 'Tech Stack';
