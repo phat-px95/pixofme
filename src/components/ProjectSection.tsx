@@ -1,16 +1,18 @@
 import Card, { CardProps } from './Card';
 
-export interface CustomSectionProps {
+export interface ProjectSectionProps {
   sectionTitle: string;
   data: CardProps[];
 }
 
-const CustomSection = ({ sectionTitle, data }: CustomSectionProps) => {
+const ProjectSection = ({ sectionTitle, data }: ProjectSectionProps) => {
   return (
     <section
       // id='projects'
       className={`mb-16 transition-all duration-1000 delay-300 opacity-1 translate-y-0`}
     >
+        <div className='absolute inset-0 h-[60%] transition-colors duration-500 bg-gradient-to-br from-indigo-400 to-purple-500'></div>
+
       <div className='relative py-8 mb-8'>
         <div className='absolute left-0 right-0 top-1/2 h-0.5 bg-lime-300 transform -translate-y-1/2'></div>
 
@@ -23,7 +25,7 @@ const CustomSection = ({ sectionTitle, data }: CustomSectionProps) => {
         </div>
       </div>
 
-      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-4'>
+      <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-6 mx-8 lg:mx-[360px] md-[360px] z-20 perspective-1000'>
         {data.map((card, index) => (
           <Card
             key={index}
@@ -38,4 +40,4 @@ const CustomSection = ({ sectionTitle, data }: CustomSectionProps) => {
   );
 };
 
-export default CustomSection;
+export default ProjectSection;

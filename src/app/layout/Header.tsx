@@ -1,61 +1,120 @@
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { GITHUB_URL, LINKEDIN_URL, EMAIL_URL } from '@constants/urlConstants';
+import profilePic from '@assets/images/profile-picture.jpg';
 
-const Header = () => {
+const SecondaryHeader = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <header className='sticky top-0 bg-gradient-to-br from-slate-600 to-slate-700 shadow-slate-800 shadow-sm'>
-      <div className='max-w-7xl mx-auto px-4 md:px-8 py-4'>
-        <div className='flex flex-wrap justify-between items-center gap-4'>
-          {/* Logo/Name with LEGO brick effect */}
-          <Link
-            to='/'
-            className='relative text-xl md:text-2xl font-bold text-white transition-all duration-200 hover:bg-yellow-400 rounded px-4 py-2 group'
-          >
-            {/* Square LEGO Studs */}
-            <span className='absolute -top-2 left-1/4 -translate-x-1/2 w-3 h-2 bg-yellow-400 border border-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200'></span>
-            <span className='absolute -top-2 left-2/4 -translate-x-1/2 w-3 h-2 bg-yellow-400 border border-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200'></span>
-            <span className='absolute -top-2 left-3/4 -translate-x-1/2 w-3 h-2 bg-yellow-400 border border-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200'></span>
-            PHAT PHAM
-          </Link>
+    <header className='bg-white border-b-2 border-lime-300 shadow-sm fixed top-0 left-0 right-0 z-50'>
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='flex justify-between items-center py-4'>
+          {/* Left: Profile and Icons */}
+          <div className='flex items-center gap-4'>
+            {/* Profile */}
+            <div className='flex items-center gap-3'>
+              <div className='w-12 h-12 rounded-full overflow-hidden p-1 bg-gradient-to-br from-yellow-400 to-lime-400 grid place-items-center shadow-md shrink-0'>
+                <img
+                  src={profilePic}
+                  alt='XP'
+                  className='w-full h-full rounded-full object-cover'
+                />
+              </div>
+              <span className='font-semibold text-lime-900 text-lg'>
+                Phat XPham
+              </span>
+            </div>
 
-          {/* Navigation */}
-          <nav>
-            <ul className='flex gap-2'>
-              <li>
-                <Link
-                  to='/stories'
-                  className='relative block px-4 py-2 text-base md:text-lg text-white font-medium transition-all duration-200 hover:bg-yellow-400 rounded group'
-                >
-                  {/* Square LEGO Stud */}
-                  <span className='absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-2 bg-yellow-400 border border-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200'></span>
-                  Posts
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to='/games'
-                  className='relative block px-4 py-2 text-base md:text-lg text-white font-medium transition-all duration-200 hover:bg-yellow-400 rounded group'
-                >
-                  {/* Square LEGO Stud */}
-                  <span className='absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-2 bg-yellow-400 border border-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200'></span>
-                  Playground
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to='/hobbies'
-                  className='relative block px-4 py-2 text-base md:text-lg text-white font-medium transition-all duration-200 hover:bg-yellow-400 rounded group'
-                >
-                  {/* Square LEGO Stud */}
-                  <span className='absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-2 bg-yellow-400 border border-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200'></span>
-                  Hobbies
-                </Link>
-              </li>
-            </ul>
-          </nav>
+            {/* Social Icons - Hidden on mobile */}
+            <div className='hidden md:flex items-center gap-3 ml-4'>
+              <a
+                href={GITHUB_URL}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='p-2 rounded-full hover:bg-lime-100 transition-colors'
+                aria-label='GitHub'
+              >
+                <Github className='w-5 h-5 text-lime-700' />
+              </a>
+              <a
+                href={LINKEDIN_URL}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='p-2 rounded-full hover:bg-lime-100 transition-colors'
+                aria-label='LinkedIn'
+              >
+                <Linkedin className='w-5 h-5 text-lime-700' />
+              </a>
+              <a
+                href={`mailto:${EMAIL_URL}`}
+                className='p-2 rounded-full hover:bg-lime-100 transition-colors'
+                aria-label='Email'
+              >
+                <Mail className='w-5 h-5 text-lime-700' />
+              </a>
+            </div>
+          </div>
+
+          {/* Right: Menu Button */}
+          <button
+            onClick={toggleMenu}
+            className='p-2 rounded-lg hover:bg-lime-100 transition-colors'
+            aria-label='Toggle menu'
+          >
+            {isMenuOpen ? (
+              <X className='w-6 h-6 text-lime-700' />
+            ) : (
+              <Menu className='w-6 h-6 text-lime-700' />
+            )}
+          </button>
         </div>
       </div>
+
+      {/* Collapsible Menu - Overlay */}
+      <nav
+        className={`absolute top-full left-0 right-0 bg-white border-b-2 border-lime-300 shadow-lg transition-all duration-300 ease-in-out overflow-hidden ${
+          isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4'>
+          <ul className='space-y-2'>
+            <li>
+              <a
+                href='#posts'
+                onClick={toggleMenu}
+                className='block px-4 py-2 rounded-lg hover:bg-lime-100 text-lime-900 font-medium transition-colors text-right'
+              >
+                Posts
+              </a>
+            </li>
+            <li>
+              <a
+                href='#hobbies'
+                onClick={toggleMenu}
+                className='block px-4 py-2 rounded-lg hover:bg-lime-100 text-lime-900 font-medium transition-colors text-right'
+              >
+                Hobbies
+              </a>
+            </li>
+            <li>
+              <a
+                href='#playgrounds'
+                onClick={toggleMenu}
+                className='block px-4 py-2 rounded-lg hover:bg-lime-100 text-lime-900 font-medium transition-colors text-right'
+              >
+                Playgrounds
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
   );
 };
 
-export default Header;
+export default SecondaryHeader;

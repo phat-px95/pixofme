@@ -3,28 +3,29 @@
 @tailwind utilities;
 /* You can add global styles to this file, and also import other style files */
 :root {
-	background-color: #fef7f9;
-	background-image: radial-gradient(#FFB6C1 1px, transparent 1px);
-	background-size: 20px 20px;
-	font-family: "Rubik", sans-serif;
+  background-color: #fef7f9;
+  background-image: radial-gradient(#ffb6c1 1px, transparent 1px);
+  background-size: 20px 20px;
+  font-family: 'Rubik', sans-serif;
 
-	--lego-red: #C91A09;
-	--lego-blue: #0055BF;
-	--lego-yellow: #F2CD37;
-	--lego-green: #287F46;
-	--lego-pink: #FFB6C1;
-	--lego-white: #FFFFFF;
-	--lego-black: #1A1A1A;
-	--lego-gray: #6C6E70;
+  --lego-red: #c91a09;
+  --lego-blue: #0055bf;
+  --lego-yellow: #f2cd37;
+  --lego-green: #287f46;
+  --lego-pink: #ffb6c1;
+  --lego-white: #ffffff;
+  --lego-black: #1a1a1a;
+  --lego-gray: #6c6e70;
 }
 
-h1, h2, h3 {
-	font-family: "Silkscreen", sans-serif;
+h1,
+h2,
+h3 {
+  font-family: 'Silkscreen', sans-serif;
 }
 
-
-
-img, canvas {
+img,
+canvas {
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
@@ -32,4 +33,54 @@ img, canvas {
 
 header {
   z-index: 2147483647;
+}
+
+.laptop-flip {
+  transform-origin: center bottom;
+  transform-style: preserve-3d;
+  transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: rotateX(-90deg); /* Starts closed/flat */
+}
+
+/* When loaded/open */
+.laptop-open {
+  transform: rotateX(0deg); /* Opens to upright position */
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.flip-out {
+  animation: flipOut 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.flip-in {
+  animation: flipIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes flipOut {
+  0% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipIn {
+  0% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
 }

@@ -1,20 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import { useMainPageLoaded } from '@hooks/useMainPageLoaded';
 
 const Hero = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
+  const { appLoaded } = useMainPageLoaded();
 
   return (
     <div
-      className={`text-center mb-16 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      className={`text-center mb-16 transition-all duration-1000 ${appLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
     >
       {/* Decorative Graphics Container */}
       <div className='relative max-w-5xl mx-auto'>
         {/* Computer Screen Frame */}
-        <div className='relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 shadow-2xl'>
+        <div className={`relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 shadow-2xl laptop-flip ${appLoaded ? 'laptop-open' : 'opacity-0'}`}>
           {/* Screen Header with Camera */}
           <div className='flex items-center justify-center mb-4 pb-3 border-b border-gray-700 relative'>
             <div className='flex gap-1.5 absolute left-0'>

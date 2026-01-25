@@ -1,5 +1,5 @@
 import { createBrowserRouter, createHashRouter } from 'react-router-dom';
-import HomePage from '@pages/SecondaryHomePage';
+import HomePage from '@pages/HomePage';
 import NotFoundPage from '@pages/NotFoundPage';
 import App from './app';
 import StoriesPage from '@pages/StoriesPage';
@@ -8,7 +8,7 @@ import HobbiesPage from '@pages/HobbiesPage';
 
 const routes = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
 	errorElement: <NotFoundPage />,
 	children: [

@@ -1,9 +1,11 @@
+import { ProjectSectionProps } from '@components/ProjectSection';
+
 import {
 	BUCKZY_LOGO_IMAGE,
 	COC_COC_LOGO_IMAGE,
 	SVMC_LOGO_IMAGE,
 	VEEM_LOGO_IMAGE,
-} from "./imageConstants";
+} from './imageConstants';
 
 export const TECH_STACK_DATA = [
   { name: 'HTML', icon: '🌐' },
@@ -89,3 +91,41 @@ export const EXPERIENCE_DATA = [
 	  ],
 	},
   ];
+
+  export const PROJECT_DATA: ProjectSectionProps = {
+  sectionTitle: 'My Recent Projects',
+  data: [
+    {
+      thumbnailImage: '',
+      cardTitle: 'My Recent Projects',
+      cardDescription:
+        ' A full-stack e-commerce solution with real-time inventory management and secure payment processing.',
+      cardExtraInfo: [
+        {
+          label: 'Demo',
+          url: 'https://phat-px95.github.io/pixofme/',
+        },
+        {
+          label: 'Source',
+          url: 'https://github.com/phat-px95/pixofme',
+        },
+      ],
+    },
+    {
+      thumbnailImage: '',
+      cardTitle: 'My Recent Projects',
+      cardDescription:
+        ' A full-stack e-commerce solution with real-time inventory management and secure payment processing.',
+      cardExtraInfo: [
+        {
+          label: 'Demo',
+          url: 'https://phat-px95.github.io/pixofme/',
+        },
+        {
+          label: 'Source',
+          url: 'https://github.com/phat-px95/pixofme',
+        },
+      ],
+    },
+  ],
+};
