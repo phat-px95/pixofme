@@ -1,1 +1,1 @@
-export const TECH_STACK_LANG = 'Tech Stack';
+export const TECH_STACK_LANG = 'My Experties';

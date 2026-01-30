@@ -30,24 +30,24 @@ const WorkExperienceSection = () => {
       <div
         className={`relative overflow-hidden transition-all duration-1000 ${isFlipping ? 'opacity-0' : 'opacity-100'}`}
       >
-        <div className='absolute inset-0 h-[60%] transition-colors duration-500 bg-gradient-to-br from-emerald-400 to-teal-500'></div>
+        <div className='absolute inset-0 h-[60%] transition-colors duration-500 bg-gradient-to-br from-[#6C5CE7] to-[#5F3DC4]'></div>
         <div className='hidden lg:block max-w-7xl mx-auto py-0 mb-8 sm:px-6 lg:px-8 md:px-8 relative z-10'>
           {/* Desktop: Horizontal Timeline */}
           <div className='hidden lg:block relative py-8 max-w-4xl mx-8 lg:mx-auto perspective-1000'>
             <div className='absolute left-0 right-0 top-1/2 h-0.5 bg-lime-300 transform -translate-y-1/2'></div>
 
             <div className='flex items-center gap-[20px]'>
-              <div className='relative z-10 bg-gradient-to-br from-lime-50 to-yellow-50 px-4 flex-shrink-0'>
-                <h2 className='text-xl font-bold text-lime-900 whitespace-nowrap'>
+              <div className='relative z-10 bg-gradient-to-br from-[#FAFBFC] to-[#F3F4F6] px-3 py-2 rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.05)] border border-[#E5E7EB]'>
+                <h2 className='text-2xl font-bold text-[#2D3436] whitespace-nowrap'>
                   Work Experience
                 </h2>
               </div>
 
-              <div className='flex items-center gap-1 flex-shrink-0'>
+              <div className='flex items-center flex-shrink-0'>
                 {EXPERIENCE_DATA.map((exp: WorkExperience) => (
                   <div
                     key={exp.year}
-                    className='relative flex flex-col items-center min-w-40'
+                    className='relative flex flex-col items-center min-w-[150px]'
                   >
                     <button
                       onClick={() => handleYearChange(exp.year)}
@@ -58,10 +58,10 @@ const WorkExperienceSection = () => {
                       }`}
                     >
                       <div
-                        className={`w-14 h-14 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-500 ease-out z-10 ${
+                        className={`w-16 h-16 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-500 ease-out z-10 text-[16px] ${
                           selectedYear === exp.year
-                            ? 'bg-gradient-to-br from-lime-400 to-yellow-400 text-white shadow-lg ring-4 ring-lime-200'
-                            : 'bg-white border-2 border-lime-300 text-lime-700 hover:border-lime-400'
+                            ? 'bg-gradient-to-br from-[#5F3DC4] to-[#6C5CE7] text-white shadow-lg ring-4 ring-lime-200'
+                            : 'bg-white border-2 border-lime-300 text-lime-[#4B5563] hover:border-lime-400'
                         }`}
                       >
                         {exp.year}
@@ -71,14 +71,14 @@ const WorkExperienceSection = () => {
                         <div
                           className={`font-medium text-xs transition-all duration-500 ease-out ${
                             selectedYear === exp.year
-                              ? 'text-lime-900'
-                              : 'text-lime-700'
+                              ? 'text-white/80'
+                              : 'text-white/100'
                           }`}
                         >
                           {exp.companyName}
                         </div>
                         {exp.current && (
-                          <span className='inline-block px-2 py-0.5 text-xs font-medium bg-lime-200 text-lime-800 rounded-full mt-1'>
+                          <span className='inline-block px-2 py-0.5 text-xs font-medium bg-lime-200 text-lime-[#2D3436] rounded-full mt-1'>
                             Current
                           </span>
                         )}
@@ -93,23 +93,23 @@ const WorkExperienceSection = () => {
 
         {/* Mobile: Vertical Timeline */}
         <div className='lg:hidden'>
-			          {/* <div className='relative z-10 bg-gradient-to-br from-lime-50 to-yellow-50 px-6'>
+          {/* <div className='relative z-10 bg-gradient-to-br from-lime-50 to-yellow-50 px-6'>
 
-          <h2 className='text-xl font-bold text-lime-900 relative mb-6'>
+          <h2 className='text-2xl font-bold text-lime-[#1a1a1a] relative mb-6'>
             Work Experience
           </h2>
 					  </div> */}
-					        <div className='relative p-8'>
-        <div className='absolute left-0 right-0 top-1/2 h-0.5 bg-lime-300 transform -translate-y-1/2'></div>
+          <div className='relative p-8'>
+            <div className='absolute left-0 right-0 top-1/2 h-0.5 bg-lime-300 transform -translate-y-1/2'></div>
 
-        <div className='flex items-center justify-center px-4'>
-          <div className='relative z-10 bg-gradient-to-br from-lime-50 to-yellow-50 px-6'>
-            <h2 className='text-xl font-bold text-lime-900 whitespace-nowrap'>
-              Work Experience
-            </h2>
+            <div className='flex items-center justify-center px-4'>
+              <div className='relative z-10 bg-gradient-to-br from-lime-50 to-yellow-50 px-6'>
+                <h2 className='text-2xl font-bold text-lime-[#1a1a1a] whitespace-nowrap'>
+                  Work Experience
+                </h2>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
           <div className='relative mx-8'>
             <div className='absolute left-6 top-0 bottom-0 w-0.5 bg-lime-300'></div>
 
@@ -124,7 +124,7 @@ const WorkExperienceSection = () => {
                     className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-xs transition-all duration-500 ease-out z-10 flex-shrink-0 ${
                       selectedYear === exp.year
                         ? 'bg-gradient-to-br from-lime-400 to-yellow-400 text-white shadow-lg ring-4 ring-lime-200'
-                        : 'bg-white border-2 border-lime-300 text-lime-700'
+                        : 'bg-white border-2 border-lime-300 text-lime-[#4B5563]'
                     }`}
                   >
                     {exp.year}
@@ -134,14 +134,14 @@ const WorkExperienceSection = () => {
                     <div
                       className={`font-medium text-sm transition-all duration-500 ease-out ${
                         selectedYear === exp.year
-                          ? 'text-lime-900'
-                          : 'text-lime-700'
+                          ? 'text-lime-[#1a1a1a]'
+                          : 'text-lime-[#4B5563]'
                       }`}
                     >
                       {exp.companyName}
                     </div>
                     {exp.current && (
-                      <span className='inline-block px-2 py-0.5 text-xs font-medium bg-lime-200 text-lime-800 rounded-full mt-1'>
+                      <span className='inline-block px-2 py-0.5 text-xs font-medium bg-lime-200 text-lime-[#2D3436] rounded-full mt-1'>
                         Current
                       </span>
                     )}
@@ -155,7 +155,7 @@ const WorkExperienceSection = () => {
         {/* Experience Details */}
         <div className='max-w-4xl mx-8 lg:mx-auto perspective-1000'>
           <div
-            className={`bg-white rounded-xl p-8 shadow-md border-2 border-lime-200 min-h-80 transition-all duration-600 transform-style-3d ${
+            className={`bg-white rounded-xl p-8 shadow-md border-2 min-h-80 transition-all duration-600 transform-style-3d ${
               isFlipping ? 'flip-out' : 'flip-in'
             }`}
           >
@@ -164,13 +164,13 @@ const WorkExperienceSection = () => {
                 <div className='flex gap-8'>
                   <div className='flex-1'>
                     <div className='mb-6'>
-                      <h3 className='text-2xl font-bold text-lime-900 mb-2'>
+                      <h3 className='text-2xl font-bold text-lime-[#1a1a1a] mb-2'>
                         {selectedExperience.role}
                       </h3>
-                      <p className='text-lg text-lime-700 font-semibold mb-1'>
+                      <p className='text-lg text-lime-[#4B5563] font-semibold mb-1'>
                         {selectedExperience.companyTitle}
                       </p>
-                      <p className='text-sm text-lime-600'>
+                      <p className='text-sm text-lime-[#5F3DC4]'>
                         {selectedExperience.period}
                       </p>
                     </div>
@@ -184,20 +184,22 @@ const WorkExperienceSection = () => {
                     />
                   </div>
                 </div>
-                <p className='text-lime-800 mb-6 leading-relaxed'>
+                <p className='text-lime-[#2D3436] mb-6 leading-relaxed'>
                   {selectedExperience.description}
                 </p>
 
                 <div>
-                  <h4 className='font-semibold text-lime-900 mb-3'>
+                  <h4 className='font-semibold text-lime-[#1a1a1a] mb-3'>
                     Key Achievements:
                   </h4>
                   <ul className='space-y-2'>
                     {selectedExperience.achievements.map(
                       (achievement: string[], index: number) => (
                         <li key={index} className='flex items-start gap-2'>
-                          <span className='text-lime-500 mt-1'>✓</span>
-                          <span className='text-lime-700'>{achievement}</span>
+                          <span className='text-lime-[#6C5CE7] mt-1'>✓</span>
+                          <span className='text-lime-[#4B5563]'>
+                            {achievement}
+                          </span>
                         </li>
                       ),
                     )}

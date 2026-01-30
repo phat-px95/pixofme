@@ -16,7 +16,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <main className='flex flex-col justify-center py-12 pt-24'>
+    <div className='flex flex-col justify-center py-12 pt-24'>
       <Hero />
       
       <WorkExperienceSection />
@@ -31,7 +31,7 @@ const HomePage = () => {
         data={PROJECT_DATA.data}
       />
 
-    </main>
+    </div>
   );
 };
 

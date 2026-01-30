@@ -5,7 +5,7 @@ import Footer from './layout/Footer';
 
 const App = () => {
   return (
-    <div className='min-h-screen bg-gradient-to-br from-lime-50 to-yellow-50'>
+    <div className='min-h-screen'>
       <Header />
       <Main />
 
