@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
-import { GITHUB_URL, LINKEDIN_URL, EMAIL_URL } from '@constants/urlConstants';
+import { Menu, X, Github, Linkedin, Mail, Strav, Icon } from 'lucide-react';
+import { GITHUB_URL, LINKEDIN_URL, EMAIL_URL, STRAVA_URL } from '@constants/urlConstants';
 import favIcon from '@assets/icons/fav.svg';
+import stravaIcon from '@assets/icons/strava.svg';
 
 const SecondaryHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,48 +12,57 @@ const SecondaryHeader = () => {
   };
 
   return (
-    <header className='bg-white border-b-2 border-[#E5E7EB] shadow-[0_2px_8px_rgba(0,0,0,0.05)] fixed top-0 left-0 right-0 z-50'>
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='flex justify-between items-center py-4'>
-          <div className='flex items-center gap-4'>
-            <div className='flex items-center gap-1'>
-              <div className='w-12 h-12 place-items-center shrink-0'>
+    <header className="bg-white border-b-2 border-[#E5E7EB] shadow-[0_2px_8px_rgba(0,0,0,0.05)] fixed top-0 left-0 right-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-4">
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-1">
+              <div className="w-12 h-12 place-items-center shrink-0">
                 <img
                   src={favIcon}
-                  alt='PHAT PHAM'
-                  className='w-full h-full rounded-full object-cover'
+                  alt="PHAT PHAM"
+                  className="w-full h-full rounded-full object-cover"
                 />
               </div>
-              <span className='font-bold text-[#2D3436] text-lg'>
+              <span className="font-bold text-[#2D3436] text-lg">
                 PHAT PHAM
               </span>
             </div>
 
-            <div className='hidden md:flex items-center gap-3 ml-4'>
+            <div className="hidden md:flex items-center gap-3 ml-4">
               <a
                 href={GITHUB_URL}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='p-2 rounded-full hover:bg-[#F0ECFF] transition-all duration-300 ease-in-out hover:scale-110'
-                aria-label='GitHub'
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full hover:bg-[#F0ECFF] transition-all duration-300 ease-in-out hover:scale-110"
+                aria-label="GitHub"
               >
-                <Github className='w-5 h-5 text-[#6C5CE7]' />
+                <Github className="w-5 h-5 text-[#6C5CE7]" />
               </a>
               <a
                 href={LINKEDIN_URL}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='p-2 rounded-full hover:bg-[#F0ECFF] transition-all duration-300 ease-in-out hover:scale-110'
-                aria-label='LinkedIn'
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full hover:bg-[#F0ECFF] transition-all duration-300 ease-in-out hover:scale-110"
+                aria-label="LinkedIn"
               >
-                <Linkedin className='w-5 h-5 text-[#6C5CE7]' />
+                <Linkedin className="w-5 h-5 text-[#6C5CE7]" />
               </a>
               <a
                 href={`mailto:${EMAIL_URL}`}
-                className='p-2 rounded-full hover:bg-[#F0ECFF] transition-all duration-300 ease-in-out hover:scale-110'
-                aria-label='Email'
+                className="p-2 rounded-full hover:bg-[#F0ECFF] transition-all duration-300 ease-in-out hover:scale-110"
+                aria-label="Email"
               >
-                <Mail className='w-5 h-5 text-[#6C5CE7]' />
+                <Mail className="w-5 h-5 text-[#6C5CE7]" />
+              </a>
+              <a
+                href={STRAVA_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full hover:bg-[#F0ECFF] transition-all duration-300 ease-in-out hover:scale-110"
+                aria-label="GitHub"
+              >
+                <img src={stravaIcon} alt='strava' className="w-5 h-5 text-[#6C5CE7]" />
               </a>
             </div>
           </div>

@@ -54,6 +54,8 @@ export const EXPERIENCE_DATA = [
     period: '2024 - Current',
     companyName: 'Veem Inc.',
     companyTitle: 'Veem Inc. - Payment processing platform',
+    website: 'https://www.veem.com/',
+    websiteLabel: 'veem.com',
     companyLogo: VEEM_LOGO_IMAGE,
     role: 'Software Developer',
     current: true,
@@ -70,6 +72,8 @@ export const EXPERIENCE_DATA = [
     period: '2022 - 2024',
     companyName: 'Buckzy Payment Inc',
     companyTitle: 'Buckzy Payment Inc. - Payment processing platform',
+    website: 'https://buckzy.net/',
+    websiteLabel: 'buckzy.net',
     companyLogo: BUCKZY_LOGO_IMAGE,
     companyIcon: '',
     role: 'Software Developer',
@@ -85,6 +89,8 @@ export const EXPERIENCE_DATA = [
     period: '2029 - 2022',
     companyName: 'Coc Coc Company Limited',
     companyTitle: 'Coc Coc Company Limited - Web Browser and Search Engine',
+    website: 'https://coccoc.com/en/',
+    websiteLabel: 'coccoc.com',
     companyLogo: COC_COC_LOGO_IMAGE,
     role: 'Tech Lead',
     current: false,
@@ -101,6 +107,8 @@ export const EXPERIENCE_DATA = [
     companyName: 'Samsung Vietnam Mobile R&D Center',
     companyTitle:
       'Samsung Vietnam Mobile R&D Center - Mobile software research and development',
+    website: 'https://vn.linkedin.com/company/samsung-rnd-vietnam',
+    websiteLabel: 'SVMC',
     companyLogo: SVMC_LOGO_IMAGE,
     role: 'Software Developer',
     current: false,
@@ -118,7 +126,7 @@ export const PROJECT_DATA: ProjectSectionProps = {
       thumbnailImage: imageEditorProject,
       cardTitle: 'Simple Image Editor',
       cardDescription:
-        'A free and simple tool that actually works - made with Vanilla JS and canvas API',
+        'A simple tool that actually works - made with Vanilla JS and canvas API',
       cardExtraInfo: [
         {
           label: 'Demo',
