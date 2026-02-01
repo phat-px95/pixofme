@@ -93,12 +93,6 @@ const WorkExperienceSection = () => {
 
         {/* Mobile: Vertical Timeline */}
         <div className='lg:hidden'>
-          {/* <div className='relative z-10 bg-gradient-to-br from-lime-50 to-yellow-50 px-6'>
-
-          <h2 className='text-2xl font-bold text-lime-[#1a1a1a] relative mb-6'>
-            Work Experience
-          </h2>
-					  </div> */}
           <div className='relative p-8'>
             <div className='absolute left-0 right-0 top-1/2 h-0.5 bg-lime-300 transform -translate-y-1/2'></div>
 
@@ -185,7 +179,31 @@ const WorkExperienceSection = () => {
                   </div>
                 </div>
                 <p className='text-lime-[#2D3436] mb-6 leading-relaxed'>
-                  {selectedExperience.description}
+                  <a
+                    href={selectedExperience.website}
+                    className='inline-flex font-medium items-center text-[#5F3DC4] hover:underline'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    {selectedExperience.websiteLabel}
+                    <svg
+                      className='w-4 h-4 ms-2 rtl:rotate-[270deg]'
+                      aria-hidden='true'
+                      xmlns='http://www.w3.org/2000/svg'
+                      width='24'
+                      height='24'
+                      fill='none'
+                      viewBox='0 0 24 24'
+                    >
+                      <path
+                        stroke='currentColor'
+                        stroke-linecap='round'
+                        stroke-linejoin='round'
+                        stroke-width='2'
+                        d='M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778'
+                      />
+                    </svg>
+                  </a>
                 </p>
 
                 <div>

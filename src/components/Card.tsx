@@ -22,7 +22,7 @@ const Card = ({
     <div className='bg-white rounded-xl shadow-md border-2 overflow-hidden hover:shadow-xl transition-all hover:scale-105 duration-300'>
       <div className='bg-gradient-to-br from-lime-100 to-yellow-100 flex items-center justify-center'>
         <div className='text-6xl'>
-          <img className="h-full w-full object-cover" src={thumbnailImage} alt='' />
+          <img className="h-full lg:h-[400px] w-full object-cover" src={thumbnailImage} alt='' />
         </div>
       </div>
       <div className='p-6'>
