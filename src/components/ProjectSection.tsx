@@ -11,8 +11,8 @@ const ProjectSection = ({ sectionTitle, data }: ProjectSectionProps) => {
       // id='projects'
       className={`mb-16 transition-all duration-1000 delay-300 opacity-1 translate-y-0 mt-8`}
     >
-      <div className='relative overflow-hidden transition-all duration-1000'>
-        <div className="absolute inset-0 h-[30%] lg:h-[60%] transition-colors duration-500 bg-gradient-to-br from-[#6C5CE7] to-[#5F3DC4]"></div>
+      <div className='relative transition-all duration-1000'>
+        <div className="absolute inset-0 h-[30%] lg:h-[400px] transition-colors duration-500 bg-gradient-to-br from-[#6C5CE7] to-[#5F3DC4]"></div>
 
         <div className="relative py-8 mb-8">
           <div className="absolute left-[50%] right-0 top-1/2 h-0.5 bg-lime-300 transform -translate-y-1/2"></div>
@@ -26,7 +26,7 @@ const ProjectSection = ({ sectionTitle, data }: ProjectSectionProps) => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-16 mx-8 lg:mx-[360px] md-[360px] z-20 perspective-1000">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-16 mx-8 lg:mx-[420px] md-[360px] z-20 perspective-1000">
           {data.map((card, index) => (
             <Card
               key={index}
