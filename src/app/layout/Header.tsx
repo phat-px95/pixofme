@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, Github, Linkedin, Mail, Strav, Icon } from 'lucide-react';
 import { GITHUB_URL, LINKEDIN_URL, EMAIL_URL, STRAVA_URL } from '@constants/urlConstants';
-import favIcon from '@assets/icons/fav.svg';
+import favIcon from '@assets//fav.svg';
 import stravaIcon from '@assets/icons/strava.svg';
 
 const SecondaryHeader = () => {

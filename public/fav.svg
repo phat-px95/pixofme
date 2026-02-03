@@ -1,0 +1,38 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Purple Gradient -->
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6C5CE7;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#5F3DC4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A28A3;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Subtle glow filter -->
+    <filter id="subtleGlow">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Outer P (larger) -->
+  <path d="M 20 15 L 20 85 M 20 15 L 55 15 Q 75 15 75 37.5 Q 75 60 55 60 L 20 60" 
+        stroke="url(#purpleGradient)" 
+        stroke-width="10" 
+        fill="none" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        filter="url(#subtleGlow)"/>
+  
+  <!-- Inner P (nested inside the loop) -->
+  <path d="M 35 25 L 35 52 M 35 25 L 48 25 Q 60 25 60 33.5 Q 60 42 48 42 L 35 42" 
+        stroke="url(#purpleGradient)" 
+        stroke-width="7" 
+        fill="none" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        filter="url(#subtleGlow)"
+        opacity="0.85"/>
+</svg>
