@@ -1,7 +1,7 @@
 # 🖼️ PixOfMe
 
 <div align="center">
-  <img src="https://phat-px95.github.io/pixofme/assets/fav-CBnBRPLP.svg" width="100" height="100" alt="PixOfMe Icon">
+  <img src="https://phat-px95.github.io/pixofme/fav.svg" width="100" height="100" alt="PixOfMe Icon">
   
   <p><em>Personal Portfolio</em></p>
   
@@ -78,4 +78,4 @@ Feel free to explore the code, and don't hesitate to reach out if you'd like to 
 
 <div align="center">
   <p><strong>⭐ Star this repo if you find it interesting!</strong></p>
-  <img src="https://phat-px95.github.io/pixofme/assets/fav-CBnBRPLP.svg" width="32" width="32" height="32" alt="PixOfMe">
+  <img src="https://phat-px95.github.io/pixofme/fav.svg" width="32" width="32" height="32" alt="PixOfMe">
